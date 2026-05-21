@@ -8,7 +8,7 @@ const MongoStore = require("connect-mongo");
 const app = express();
 
 // MONGODB CONNECTION
-mongoose.connect("mongodb://127.0.0.1:27017/wanderway", {
+mongoose.connect("mongodb://127.0.0.1:27017/Zappit", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -37,11 +37,11 @@ app.set("view engine", "ejs");
 // SESSION SETUP
 app.use(
   session({
-    secret: "wanderway-secret",
+    secret: "Zappit-secret",
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/wanderway",
+      mongoUrl: "mongodb://127.0.0.1:27017/Zappit",
     }),
     cookie: { maxAge: 1000 * 60 * 60 }, // 1 hour
   })
@@ -66,5 +66,5 @@ app.use("/admin", adminRoutes);
 // START SERVER
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 WanderWay running at http://localhost:${PORT}`);
+  console.log(`🚀 Zappit running at http://localhost:${PORT}`);
 });
