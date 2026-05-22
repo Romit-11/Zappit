@@ -45,11 +45,11 @@
 
   <!-- View Hotels -->
   <a 
-    href="/hotels?location=<%= encodeURIComponent(place.location) %>" 
-    class="hotel-btn"
-  >
-    🏨 View Nearby Hotels
-  </a>
+  href="/place/<%= place._id %>/hotels"
+  class="hotel-btn"
+>
+  🏨 View Nearby Hotels
+</a>
 
   <!-- View Location on Google Maps -->
   <a 
